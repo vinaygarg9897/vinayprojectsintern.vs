@@ -1,0 +1,22 @@
+# Docker Compose Development Configuration
+# Override with: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+version: '3.8'
+
+services:
+  api:
+    environment:
+      NODE_ENV: development
+    command: pnpm --filter @amdox/api start:dev
+    volumes:
+      - ./apps/api/src:/app/apps/api/src
+      - ./packages:/app/packages
+
+  web:
+    environment:
+      NODE_ENV: development
+    command: pnpm --filter @amdox/web dev
+    volumes:
+      - ./apps/web/src:/app/apps/web/src
+      - ./apps/web/public:/app/apps/web/public
+      - ./packages:/app/packages

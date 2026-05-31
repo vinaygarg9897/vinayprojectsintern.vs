@@ -1,0 +1,17 @@
+{
+  "name": "amdox-erp-suite",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\""
+  },
+  "devDependencies": {
+    "turbo": "^2.1.2",
+    "prettier": "^3.3.3",
+    "eslint": "^9.10.0"
+  },
+  "packageManager": "pnpm@9.1.0"
+}
